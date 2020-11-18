@@ -60,15 +60,17 @@
 \begin{cabstract}
 本文在Pyrobolearn机器人仿真环境中设计了一个要求机械臂的末端执行器到达指定物体附近的开放任务，并设计了新的强化学习算法用于训练智能体在未获得任务相关的奖励之前在未知环境中学习到可泛化到该开放任务的策略。
 
-在TD3算法和HER算法的基础上，本文引入了基于局部敏感哈希的基于计数的奖励和基于正向动力学预测的奖励用于鼓励智能体探索未知环境。并提出了高斯混合噪声层、和基于物理仿真引擎的奖励。
+在TD3算法和HER算法的基础上，本文引入了基于局部敏感哈希和计数的奖励和基于正向动力学预测的奖励用于鼓励智能体探索未知环境。
 
 
-本文提出的斯混合噪声层被用于提供自适应的策略噪声。本文提出的基于物理仿真引擎仿真时间的奖励被用于在未知任务的环境中鼓励智能体学习有效可泛化的策略，并在获得稀疏奖励的开放任务后快速适应到新的策略。
+本文提出的斯混合噪声层被用于提供自适应的策略噪声。提出的基于物理仿真引擎仿真时间的奖励被用于在未知任务的环境中鼓励智能体学习有效可泛化的策略，并在获得稀疏奖励的开放任务后快速适应到新的策略。
 
 \end{cabstract}
 
 \begin{eabstract}
 A task which requires the end effector of a manipulator to reach a specific body is designed with the help of the robot learning framework Pyrobolearn. New reinforcement learning algorithms are proposed to train an agent to learn in a task-agnostic environment without reward related to the task, where the learnt policy of the agent should be generalizable to the proposed task.
 
-Based on TD3 and HER algorithms, a locality sensitive hashing based reward and a forward dynamics prediction model based reward are introduced to encourage the agent to explore in the unknown environment. A mixed gaussian noise layer is proposed to provide a adaptive policy noise. A reward based on physics simulation time is proposed to encourage the agent to learn a generalizable policy in a task agnostic environment, and adapt to a new policy after given a task setting with sparse reward.
+Based on TD3 and HER algorithms, a locality sensitive hashing based counting reward and a forward dynamics prediction model based reward are introduced to encourage the agent to explore in the unknown environment. 
+
+    A mixed gaussian noise layer is proposed to provide a adaptive policy noise. A reward based on physics simulation time is proposed to encourage the agent to learn a generalizable policy in a task agnostic environment, and adapt to a new policy after given a task setting with sparse reward.
 \end{eabstract}
