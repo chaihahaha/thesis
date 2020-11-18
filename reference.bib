@@ -1,75 +1,352 @@
 % !Mode:: "TeX:UTF-8"
-
-@INPROCEEDINGS{cnproceed,
-	author    = {王重阳 and 黄药师 and 欧阳峰 and 洪七公 and 段皇帝},
-	title     = {武林高手从入门到精通},
-	booktitle = {第~$N$~次华山论剑},
-	year      = 2006,
-	address   = {西安, 中国},
-	month     = sep,
-	language   ="zh",
+%[23]
+@article{hochreiter1997long,
+	title="Long short-term memory",
+	author="Sepp {Hochreiter} and Jürgen {Schmidhuber}",
+	journal="Neural Computation",
+	volume="9",
+	number="8",
+	pages="1735--1780",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2064675550",
+	year="1997"
+}
+%[19]
+@book{sutton1988reinforcement,
+	title="Reinforcement Learning: An Introduction",
+	author="R.S. {Sutton} and A.G. {Barto}",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2121863487",
+	year="1988"
+}
+%[12]
+@inproceedings{finn2017model,
+	title="Model-agnostic meta-learning for fast adaptation of deep networks",
+	author="Chelsea {Finn} and Pieter {Abbeel} and Sergey {Levine}",
+	booktitle="ICML'17 Proceedings of the 34th International Conference on Machine Learning - Volume 70",
+	pages="1126--1135",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2604763608",
+	year="2017"
+}
+%[25]
+@inproceedings{shi2015convolutional,
+	title="Convolutional LSTM Network: a machine learning approach for precipitation nowcasting",
+	author="Xingjian {Shi} and Zhourong {Chen} and Hao {Wang} and Dit-Yan {Yeung} and Wai-kin {Wong} and Wang-chun {Woo}",
+	booktitle="NIPS'15 Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1",
+	volume="28",
+	pages="802--810",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/1485009520",
+	year="2015"
+}
+%[20]
+@inproceedings{paszke2019pytorch,
+	title="PyTorch: An Imperative Style, High-Performance Deep Learning Library",
+	author="Adam {Paszke} and Sam {Gross} and Francisco {Massa} and Adam {Lerer} and James {Bradbury} and Gregory {Chanan} and Trevor {Killeen} and Zeming {Lin} and Natalia {Gimelshein} and Luca {Antiga} and Alban {Desmaison} and Andreas {Kopf} and Edward {Yang} and Zachary {DeVito} and Martin {Raison} and Alykhan {Tejani} and Sasank {Chilamkurthy} and Benoit {Steiner} and Lu {Fang} and Junjie {Bai} and Soumith {Chintala}",
+	booktitle="Advances in Neural Information Processing Systems",
+	volume="32",
+	pages="8026--8037",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2970971581",
+	year="2019"
+}
+%[18]
+@article{dosovitskiy2017carla,
+	title="CARLA: An Open Urban Driving Simulator",
+	author="Alexey {Dosovitskiy} and Germán {Ros} and Felipe {Codevilla} and Antonio M. {López} and Vladlen {Koltun}",
+	journal="Conference on Robot Learning",
+	pages="1--16",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2962867954",
+	year="2017"
+}
+%[13]
+@inproceedings{todorov2012mujoco,
+	title="MuJoCo: A physics engine for model-based control",
+	author="Emanuel {Todorov} and Tom {Erez} and Yuval {Tassa}",
+	booktitle="2012 IEEE/RSJ International Conference on Intelligent Robots and Systems",
+	pages="5026--5033",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2158782408",
+	year="2012"
+}
+%[15]
+@inproceedings{haarnoja2018soft,
+	title="Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+	author="Tuomas {Haarnoja} and Aurick {Zhou} and Pieter {Abbeel} and Sergey {Levine}",
+	booktitle="International Conference on Machine Learning",
+	pages="1856--1865",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2962902376",
+	year="2018"
+}
+%[17]
+@article{silver2018a,
+	title="A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play.",
+	author="David {Silver} and Thomas {Hubert} and Julian {Schrittwieser} and Ioannis {Antonoglou} and Matthew {Lai} and Arthur {Guez} and Marc {Lanctot} and Laurent {Sifre} and Dharshan {Kumaran} and Thore {Graepel} and Timothy {Lillicrap} and Karen {Simonyan} and Demis {Hassabis}",
+	journal="Science",
+	volume="362",
+	number="6419",
+	pages="1140--1144",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2902907165",
+	year="2018"
+}
+%[16]
+@inproceedings{finn2016unsupervised,
+	title="Unsupervised Learning for Physical Interaction through Video Prediction",
+	author="Chelsea {Finn} and Ian J. {Goodfellow} and Sergey {Levine}",
+	booktitle="Advances in Neural Information Processing Systems",
+	pages="64--72",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2963402657",
+	year="2016"
+}
+%[4]
+@inproceedings{finn2017deep,
+	title="Deep visual foresight for planning robot motion",
+	author="Chelsea {Finn} and Sergey {Levine}",
+	booktitle="2017 IEEE International Conference on Robotics and Automation (ICRA)",
+	pages="2786--2793",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2528489519",
+	year="2017"
+}
+%[5]
+@article{peng2018deepmimic,
+	title="DeepMimic: example-guided deep reinforcement learning of physics-based character skills",
+	author="Xue Bin {Peng} and Pieter {Abbeel} and Sergey {Levine} and Michiel van de {Panne}",
+	journal="ACM Transactions on Graphics",
+	volume="37",
+	number="4",
+	pages="143",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2796290181",
+	year="2018"
+}
+%[1]
+@article{baranes2013active,
+	title="Active learning of inverse models with intrinsically motivated goal exploration in robots",
+	author="Adrien {Baranes} and Pierre-Yves {Oudeyer}",
+	journal="Robotics and Autonomous Systems",
+	volume="61",
+	number="1",
+	pages="49--73",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2004303440",
+	year="2013"
+}
+%[22]
+@article{fukushima1980neocognitron,
+	title="Neocognitron: A Self Organizing Neural Network Model for a Mechanism of Pattern Recognition Unaffected by Shift in Position",
+	author="Kunihiko {Fukushima}",
+	journal="Biological Cybernetics",
+	volume="36",
+	number="4",
+	pages="193--202",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2101926813",
+	year="1980"
+}
+%[7]
+@inproceedings{eysenbach2018diversity,
+	title="Diversity is All You Need: Learning Skills without a Reward Function",
+	author="Benjamin {Eysenbach} and Abhishek {Gupta} and Julian {Ibarz} and Sergey {Levine}",
+	booktitle="International Conference on Learning Representations",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2963438456",
+	year="2018"
+}
+%[11]
+@inproceedings{lerer2016learning,
+	title="Learning physical intuition of block towers by example",
+	author="Adam {Lerer} and Sam {Gross} and Rob {Fergus}",
+	booktitle="ICML'16 Proceedings of the 33rd International Conference on International Conference on Machine Learning - Volume 48",
+	pages="430--438",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2293598046",
+	year="2016"
+}
+%[8]
+@inproceedings{savva2019habitat,
+	title="Habitat: A Platform for Embodied AI Research",
+	author="Manolis {Savva} and Jitendra {Malik} and Devi {Parikh} and Dhruv {Batra} and Abhishek {Kadian} and Oleksandr {Maksymets} and Yili {Zhao} and Erik {Wijmans} and Bhavana {Jain} and Julian {Straub} and Jia {Liu} and Vladlen {Koltun}",
+	booktitle="2019 IEEE/CVF International Conference on Computer Vision (ICCV)",
+	pages="9339--9347",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/3009928773",
+	year="2019"
+}
+%[14]
+@article{peng2019sfv,
+	title="SFV: reinforcement learning of physical skills from videos",
+	author="Xue Bin {Peng} and Angjoo {Kanazawa} and Jitendra {Malik} and Pieter {Abbeel} and Sergey {Levine}",
+	journal="ACM Transactions on Graphics",
+	volume="37",
+	number="6",
+	pages="178",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2894766094",
+	year="2019"
+}
+%[9]
+@book{daniel2014hierarchical,
+	title="Hierarchical Relative Entropy Policy Search",
+	author="Christian {Daniel} and Gerhard {Neumann} and Oliver {Kroemer} and Jan {Peters}",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2111967991",
+	year="2014"
+}
+%[6]
+@inproceedings{toussaint2018differentiable,
+	title="Differentiable Physics and Stable Modes for Tool-Use and Manipulation Planning.",
+	author="Marc {Toussaint} and Kelsey R. {Allen} and Kevin A. {Smith} and Joshua B. {Tenenbaum}",
+	booktitle="Robotics: Science and Systems XIV",
+	volume="14",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2805883505",
+	year="2018"
+}
+%[21]
+@inproceedings{gleave2020adversarial,
+	title="Adversarial Policies: Attacking Deep Reinforcement Learning",
+	author="Adam {Gleave} and Michael {Dennis} and Cody {Wild} and Neel {Kant} and Sergey {Levine} and Stuart {Russell}",
+	booktitle="ICLR 2020 : Eighth International Conference on Learning Representations",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2996343955",
+	year="2020"
+}
+%[10]
+@inproceedings{xie2019improvisation,
+	title="Improvisation through Physical Understanding: Using Novel Objects As Tools with Visual Foresight",
+	author="Annie {Xie} and Frederik {Ebert} and Sergey {Levine} and Chelsea {Finn}",
+	booktitle="Robotics: Science and Systems XV",
+	volume="15",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2964091568",
+	year="2019"
+}
+%[26]
+@article{degrave2019a,
+	title="A Differentiable Physics Engine for Deep Learning in Robotics",
+	author="Jonas {Degrave} and Michiel {Hermans} and Joni {Dambre} and Francis {Wyffels}",
+	journal="Frontiers in Neurorobotics",
+	volume="13",
+	number="6",
+	pages="6",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2556096037",
+	year="2019"
+}
+%[3]
+@inproceedings{laversanne-finot2018curiosity,
+	title="Curiosity Driven Exploration of Learned Disentangled Goal Spaces",
+	author="Adrien {Laversanne-Finot} and Alexandre {Péré} and Pierre-Yves {Oudeyer}",
+	booktitle="CoRL 2018 - Conference on Robot Learning",
+	pages="487--504",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2963201535",
+	year="2018"
+}
+%[2]
+@article{li2019active,
+	title="Active physical inference via reinforcement learning.",
+	author="Shuaiji {Li} and Yu {Sun} and Sijia {Liu} and Tianyu {Wang} and Todd {Gureckis} and Neil R {Bramley}",
+	journal="Cognitive Science",
+	pages="2126--2132",
+	notes="Sourced from Microsoft Academic - https://academic.microsoft.com/paper/2978728720",
+	year="2019"
 }
 
-@ARTICLE{cnarticle,
-	AUTHOR  = "贾宝玉 and 林黛玉 and 薛宝钗 and 贾探春",
-	TITLE   = "论刘姥姥食量大如牛之现实意义",
-	JOURNAL = "红楼梦杂谈",
-	PAGES   = "260--266",
-	VOLUME  = "224",
-	YEAR    = "1800",
-	language   ="zh",
+% inerim
+@misc{1606.01540,
+  Author = {Greg Brockman and Vicki Cheung and Ludwig Pettersson and Jonas Schneider and John Schulman and Jie Tang and Wojciech Zaremba},
+  Title = {OpenAI Gym},
+  Year = {2016},
+  Eprint = {arXiv:1606.01540},
+}
+@MISC{Todorov_mujoco:a,
+    author = {Emanuel Todorov and Tom Erez and Yuval Tassa},
+    title = {MuJoCo: A physics engine for model-based control },
+    year = {}
+}
+@MISC{coumans2019,
+author =   {Erwin Coumans and Yunfei Bai},
+title =    {PyBullet, a Python module for physics simulation for games, robotics and machine learning},
+howpublished = {\url{http://pybullet.org}},
+year = {2016--2019}
+}
+@INPROCEEDINGS{delhaisse2019pyrobolearn,
+    AUTHOR  = {Brian Delhaisse and Leonel Rozo and Darwin G. Caldwell},
+    TITLE   = {PyRoboLearn: A {P}ython Framework for Robot Learning Practitioners},
+    BOOKTITLE = {Conference on Robot Learning (CoRL)},
+    YEAR    = {2019},
+    ADDRESS = {Osaka, Japan},
+    MONTH   = {October},
+URL     = {https://github.com/robotlearn/pyrobolearn}
+}
+@inproceedings{Wise2016FetchF,
+  title={Fetch \& Freight : Standard Platforms for Service Robot Applications},
+  author={M. Wise and Michael Ferguson and Daniel King and Eric Diehr and David Dymesich},
+  year={2016}
+}
+@article{DBLP:journals/corr/AndrychowiczWRS17,
+  author    = {Marcin Andrychowicz and
+               Filip Wolski and
+               Alex Ray and
+               Jonas Schneider and
+               Rachel Fong and
+               Peter Welinder and
+               Bob McGrew and
+               Josh Tobin and
+               Pieter Abbeel and
+               Wojciech Zaremba},
+  title     = {Hindsight Experience Replay},
+  journal   = {CoRR},
+  volume    = {abs/1707.01495},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1707.01495},
+  archivePrefix = {arXiv},
+  eprint    = {1707.01495},
+  timestamp = {Fri, 08 Nov 2019 12:51:04 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/AndrychowiczWRS17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@article{DBLP:journals/corr/abs-1802-09477,
+  author    = {Scott Fujimoto and
+               Herke van Hoof and
+               David Meger},
+  title     = {Addressing Function Approximation Error in Actor-Critic Methods},
+  journal   = {CoRR},
+  volume    = {abs/1802.09477},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1802.09477},
+  archivePrefix = {arXiv},
+  eprint    = {1802.09477},
+  timestamp = {Sat, 28 Sep 2019 00:58:01 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1802-09477.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inbook{Lin1992,
-	language   ="zh",
-	AUTHOR     = "林来兴",
-	TITLE      = "空间控制技术",
-	PUBLISHER  = "宇航出版社",
-	YEAR       = "1992",
-	Pages      = "25-42",
-	ADDRESS    = "北京",
+@article{DBLP:journals/corr/TangHFSCDSTA16,
+  author    = {Haoran Tang and
+               Rein Houthooft and
+               Davis Foote and
+               Adam Stooke and
+               Xi Chen and
+               Yan Duan and
+               John Schulman and
+               Filip De Turck and
+               Pieter Abbeel},
+  title     = {{\#}Exploration: {A} Study of Count-Based Exploration for Deep Reinforcement
+               Learning},
+  journal   = {CoRR},
+  volume    = {abs/1611.04717},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1611.04717},
+  archivePrefix = {arXiv},
+  eprint    = {1611.04717},
+  timestamp = {Mon, 03 Sep 2018 12:15:29 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/TangHFSCDSTA16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@MISC{Charikardept_similarityestimation,
+    author = {Moses S. Charikardept and Computer Science},
+    title = {Similarity Estimation Techniques from RoundingAlgorithms},
+    year = {}
 }
 
-@book{xin1994,
-	language   ="zh",
-	title={信息技术与信息服务国际研讨会论文集},
-	author={辛希孟 and 中国科学院文献信息中心 and 孟广均 and 信息学},
-	year={1994},
-	publisher={中国社会科学出版社},
-	pages={45-49},
-	address={北京},
-	typeoflit={C},
-}
+@ARTICLE{4141061,
 
-@book{zhao1998,
-	language   ="zh",
-	title={新时代的工业工程师},
-	author={赵耀东},
-	year={1998},
-	citedate =     {1998-09-26},
-	address={台北},
-	publisher={天下文化出版社},
-	url={http://www.ie.nthu.edu.tw/info/ie.newie.htm(Big5)},
-	typeoflit={M/OL},
-}
+  author={P. {Oudeyer} and F. {Kaplan} and V. V. {Hafner}},
 
-@phdthesis{Chen1992,
-	language   ="zh",
-	Author = {谌颖},
-	Title = {空间最优交会控制理论与方法研究},
-	ADDRESS    = "哈尔滨",
-	School = {哈尔滨工业大学},
-	Year = {1992},
-	pages= {8-13},
-}
+  journal={IEEE Transactions on Evolutionary Computation}, 
 
-@article{hithesis2017,
-	title={Hi!Thesis!,Harbin Institue of Technology},
-	author={Yanshuo Chu},
-	journal={Github},
-	volume={001},
-	number={0001},
-	pages={000-999},
-	year={2017},
-}
+  title={Intrinsic Motivation Systems for Autonomous Mental Development}, 
+
+  year={2007},
+
+  volume={11},
+
+  number={2},
+
+  pages={265-286},
+
+  doi={10.1109/TEVC.2006.890271}}
