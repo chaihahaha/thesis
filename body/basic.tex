@@ -19,7 +19,7 @@
     类似地，动作价值函数可以写成：
     $$Q_\pi(s,a)=\mathbb E_\pi[G_t|S_t=s,A_t=a]$$
 
-    \section{TD3算法}
+    \section{TD3算法}\label{td3sec}
     在通常的演员－评论家模式的强化学习算法中\cite{konda2002actor}，演员网络被用于拟合最优的确定性策略$\mu^*:\mathcal S\to\mathcal A$，评论家网络被用于拟合最优的动作价值函数$Q^*:\mathcal S\times \mathcal A\to \mathbb R$。在给定一个迁移$(S_t,A_t,R_t,S_{t+1})$，和现有的演员网络$\mu$和评论家网络$Q$之后，根据如下损失函数对网络参数进行优化：
     $$L_Q = \mathbb E[(R_t + \gamma Q(S_{t+1},\mu(S_{t+1})) - Q(S_t, A_t))^2]$$
     $$L_\mu = \mathbb E[-Q(S_t, \mu(S_t))]$$
@@ -45,7 +45,7 @@
     TD3算法工作原理如图\ref{td3}所示，图中的替换使用了上述指数滑动平均方法，$L_\mu$表示演员网络的损失，$L_{Q_1}$和$L_{Q_2}$分别表示根据上述公式计算出的评论家网络1和评论家网络2的损失。
     \input{body/td3}
 
-    \section{事后经验重放算法}
+    \section{事后经验重放算法}\label{HERsec}
     事后经验重放（HER）算法\cite{DBLP:journals/corr/AndrychowiczWRS17}是一个用于稀疏奖励的强化学习算法，它主要是为了解决奖励过少导致的训练速度过慢的问题。
     
     事后经验重放要求状态向量$s$由观测向量$o$，已完成目标$g^a$，期望目标$g^d$构成，即$s=(o, g^a, g^d)$。
