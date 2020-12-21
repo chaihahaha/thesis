@@ -38,7 +38,7 @@ $$r[1:T]=reward(g^d[1:T], g^a[1:T])$$
     $\epsilon_{rand}$是采用$\epsilon$-greedy探索方法进行探索时，随机采样动作的概率大小。
     $\gamma$是前述折扣系数。
     $\alpha$是演员网络和评论家网络的优化器的学习率。
-    $B$是从重放缓存中采样迁移的批次大小。
+    $B$是从重放缓冲中采样迁移的批次大小。
     $\tau$是\ref{td3sec}中所述的指数滑动平均系数。
     $T$是每个片段的最大时间步数。
     每经过$f_\mu$个时间步，才对演员网络权重进行更新一次，而评论家网络每权重更新和对靶网络权重的指数滑动平均更新在每个时间步都要做。
@@ -47,7 +47,7 @@ $$r[1:T]=reward(g^d[1:T], g^a[1:T])$$
 
 \section{实验结果}
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{mujoco_lossmu.png}
         \caption{$\mu$的损失曲线}
@@ -59,23 +59,23 @@ $$r[1:T]=reward(g^d[1:T], g^a[1:T])$$
         评论家网络1和评论家网络2的每个片段的平均损失如图\ref{mujocolossq1}和\ref{mujocolossq2}。
         通过对比可以看出两个图中的损失曲线的变化趋势大致相同且剧烈变化之处与演员网络的损失相似，这可能是由于评论家网络的好坏通过损失影响了演员网络表示的确定性策略的好坏。
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{mujoco_lossq1.png}
         \caption{$Q_1$的损失曲线}
         \label{mujocolossq1} 
         \end{figure}
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{mujoco_lossq2.png}
         \caption{$Q_2$的损失曲线}
         \label{mujocolossq2} 
         \end{figure}
 
-        每个片段的平均环境奖励如图\ref{mujocoreward}所示。
-        可以看出，随着训练的代数增多，环境的奖励开始逐渐增大，最终达到-5左右。
-        \begin{figure}
+        每一代（10个片段）的平均环境奖励如图\ref{mujocoreward}所示。
+        可以看出，随着训练的片段数和代数增多，环境的奖励开始逐渐增大，最终达到-5左右。
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{mujoco_reward.png}
         \caption{环境奖励}
@@ -85,7 +85,7 @@ $$r[1:T]=reward(g^d[1:T], g^a[1:T])$$
         平均每个片段的成功率如图\ref{mujocosuc}所示。
         每个片段的成功与否是通过片段末尾的奖励来判断的，若片段末尾的状态中的已完成的目标与期望目标的距离小于给定值，得到了值为0.0的奖励，就说这个片段成功完成了任务。由于成功率仅仅是10个片段的平均值得到的，因此它只能取到10个离散的值。
         因为成功率的计算只考虑了最后一个状态，所以成功率曲线与平均奖励曲线不完全相同。
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{mujoco_suc_rate.png}
         \caption{任务目标的平均成功率}
@@ -93,7 +93,7 @@ $$r[1:T]=reward(g^d[1:T], g^a[1:T])$$
         \end{figure}
 
         在训练完成后，仿真环境\emph{FetchReach-v1}中的这个机械臂已经可以控制它的关节并快速地使末端执行器达到红点位置，成功率约为90\%。如图\ref{mujoco_gym}所示，机械臂成功地完成了任务.
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.8\textwidth]{mujoco_gym.png}
             \caption{Fetch便携机械臂控制关节使末端执行器达到了红点位置，成功完成了指定任务目标。}

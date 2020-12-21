@@ -4,7 +4,7 @@
 通常情况下，为了增加策略的稳健性，会对演员网络输出的动作向量添加一个均值为0，标准差为定值的高斯噪声。得到的动作常常还要进行裁剪以防止出现不合理的动作。然而，此种方法需要对两个超参数进行调节，需要大量的时间来进行训练，寻找最优的超参数值。由于在此主体实验中，往往需要训练很长的时间，因此引入这两个超参数并不理想。
     
 为了避免手动调节噪声大小，本文提出了一个嵌入演员网络的可自动调节的混合高斯噪声。这个自动调节的噪声向量是通过直接在正态噪声向量后添加全连接层来得到的。得到的噪声向量被加到演员网络最后一层的输出上。
-形式化地，给定一个从正态分布中随机采样的高斯噪声向量$X_{B\times \mathrm{dim}(a)}$，其中$B$是训练的迁移批次大小，$\mathrm{dim}(a)$是动作空间的维度大小。
+形式化地，给定一个从正态分布中随机采样的$B\times \mathrm{dim}(a)$的高斯噪声矩阵$X_{B\times \mathrm{dim}(a)}$，其中$B$是训练的迁移批次大小，$\mathrm{dim}(a)$是动作空间的维度大小。
 如果把演员网络中确定性的部分的输出表示为$f(s)$，其中$s$是输入的状态向量，则有如下缩放后的噪声：
 
     $$ \mu(s) = f(s) + W X + b, X_{ij}\sim\mathcal N(0,1),$$
@@ -49,7 +49,7 @@
 \section{实验结果与分析}
     平均每个片段的使用混合高斯噪声层的演员网络的损失和使用噪声大小超参数的演员网络的损失如图\ref{fcn_lossmu}所示。有混合高斯噪声层的演员网络的损失在较少的代数内上升到了一个相对较低的值。由于这两组实验中损失都收敛到了较高的值，此损失曲线并不能明确反映哪种方法更优，因为演员网络的损失是由评论家网络决定的，而这两组实验中的评论家并不一定具有相同权重，因此即使是相同的演员网络也有可能具有不同的损失。
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{myenv_lossmu.png}
         \caption{演员网络$\mu$的损失曲线}
@@ -58,14 +58,14 @@
 
     每个片段的评论家网络$Q_1$和$Q_2$的平均损失分别如图\ref{fcn_lossq1}和图\ref{fcn_lossq2}所示。可以看出，它们的损失也是和演员网络$\mu$的损失具有相似的形状。由于评论家网络的损失也并没有收敛到较低的值，这些损失曲线也不能反映混合高斯噪声层带来的变化。但是可以肯定的是，添加混合高斯噪声层后损失曲线变化更加平缓了。从图中也可以看出，评论家网络的损失比演员网络的损失更加不稳定，这可能是由于评论家网络的损失直接与环境相关导致的。
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{myenv_lossq1.png}
         \caption{评论家网络$Q_1$的损失曲线}
             \label{fcn_lossq1}
         \end{figure}
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{myenv_lossq2.png}
         \caption{评论家网络$Q_2$的损失曲线}
@@ -74,7 +74,7 @@
 
         使用和不使用混合高斯噪声层的单位片段平均环境奖励如图\ref{fcn_reward}所示。可以看出，添加了混合高斯噪声层的方法获得的奖励要稍微比只使用噪声大小超参数的方法更高。
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{myenv_reward.png}
         \caption{平均环境奖励曲线}
@@ -83,7 +83,7 @@
 
         平均成功率曲线的变化趋势与平均环境奖励的大致相同。对于最后的平均成功率，添加了混合高斯噪声层的要稍微更高。
 
-        \begin{figure}
+        \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.6\textwidth]{myenv_suc_rate.png}
         \caption{任务目标成功率}
