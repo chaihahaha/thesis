@@ -41,7 +41,7 @@
   %=========
   % 英文信息
   %=========
-  etitle={Physical Simulation and Reasoning based Task-Agnostic learning},
+  etitle={Physical Simulation and Reasoning based Open Task Solving},
   exueke={Engineering},
   esubject={Software Engineering},
   eaffil={\emultiline[t]{Faculty of Computing}},
@@ -53,24 +53,58 @@
   estudenttype={Master of Engineering},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={元学习, 强化学习, 机器人学, 物理仿真, 深度学习},
-  ekeywords={Meta Learning, Reinforcement Learning, Robotics, Physics Simulation, Deep Learning},
+  ckeywords={元学习, 强化学习, 机器人学, 物理仿真, 稀疏奖励},
+  ekeywords={Meta Learning, Reinforcement Learning, Robotics, Physics Simulation, Sparse Reward},
 }
 
 \begin{cabstract}
+本文主要研究如何让智能体在面对开放任务时能够有效利用在环境中探索时学习到的策略，并泛化此策略到新环境中。
+本文研究的开放任务往往有着稀疏奖励和巨大的探索空间，因此需要使用较好的探索策略以加速智能体的学习。
+    为了保证智能体学习到的知识与特定任务无关，并且帮助智能体在探索过程中获得稀疏奖励，需要引入内部奖励，并使用内部奖励鼓励智能体在环境中探索。
+
 本文在Pyrobolearn机器人仿真环境中设计了一个要求机械臂的末端执行器到达指定物体附近的开放任务，并设计了新的强化学习算法用于训练智能体在未获得任务相关的奖励之前在未知环境中学习到可泛化到该开放任务的策略。
 
-在TD3算法和HER算法的基础上，本文引入了基于局部敏感哈希和计数的奖励用于鼓励智能体探索未知环境，并提出了轨迹替换方法。
+在TD3算法和事后经验重放算法的基础上，本文引入了基于局部敏感哈希和计数的奖励用于鼓励智能体探索未知环境。
+其中局部敏感哈希方法被用于将状态空间离散化，在获得状态的哈希值后，对此哈希值进行计数。
+如果计数较高说明类似的状态访问次数较多，那么就给智能体提供较少的奖励，从而鼓励智能体访问之前访问次数较少的状态。
+
+本文基于事后经验重放算法提出了轨迹替换方法。
+轨迹替换方法对每个失败的轨迹进行替换，从而获得一条更有可能成功的轨迹，并将替换过和未替换过的轨迹一起放入重放缓冲中进行训练。
+由于轨迹替换不需要假定状态向量中显式包含已完成的目标和期望目标，因此轨迹替换方法可以适用于更广泛的场景和更复杂的任务。
 
 
-本文提出的斯混合噪声层被用于提供自适应的策略噪声。提出的基于物理仿真引擎仿真时间的奖励被用于在未知任务的环境中鼓励智能体学习有效可泛化的策略，并在获得稀疏奖励的开放任务后快速适应到新的策略。
+本文提出了混合高斯噪声层，用于提供自适应的策略噪声。
+使用全连接层对高斯噪声向量进行缩放，可获得混合高斯噪声。
+本文利用了此混合高斯噪声来使得演员网络输出的确定性动作变为随机探索动作，决定探索好坏的全连接层参数自动通过反向传播进行调整。
+实验结果表明，添加了含有混合高斯噪声层的演员网络的智能体更快地收敛到了更高的环境奖励和更高的开放任务成功率。
+
+本文提出了基于物理仿真引擎仿真时间的奖励。
+    由于物理仿真引擎对于复杂碰撞等动力学过程进行仿真时要消耗更多时间，而开放任务往往要涉及复杂的动力学过程，因此可以使用物理引擎的仿真时间作为奖励提供给智能体以帮助它在环境中的探索效率和泛化性能。
+    在本文中，基于仿真时间的奖励被用于在未知任务的环境中鼓励智能体学习有效可泛化的策略，并在获得稀疏奖励的开放任务后快速适应到新的策略。
+    实验结果表明，仿真时间奖励与任务相关的奖励有明显关联，并可被用于提高智能体探索效率。
 
 \end{cabstract}
 
 \begin{eabstract}
+How to help the agent to utilize the learnt policy during exploring in th environment to solve open tasks and generalize the policy to new environments is studied.
+The open tasks often have sparse rewards and huge exploration space, so a better exploration strategy is needed to speed up the learning process of the agent.
+To ensure that the learnt knowledge is not limited to a specific task, and help the agent to get the sparse reward, intrinsic rewards are introduced and used to encourage the agent to explore in the environment.
+
 A task which requires the end effector of a manipulator to reach a specific body is designed with the help of the robot learning framework Pyrobolearn. New reinforcement learning algorithms are proposed to train an agent to learn in a task-agnostic environment without reward related to the task, where the learnt policy of the agent should be generalizable to the proposed task.
 
-Based on TD3 and HER algorithms, a locality sensitive hashing based counting reward is introduced to encourage the agent to explore in the unknown environment. And a trajector replacement strategy is proposed.
+Based on TD3 and HER algorithms, a locality sensitive hashing based counting reward is introduced to encourage the agent to explore in the unknown environment, where the LSH method is used to discretize the state space and count the number of visits. If the number of visits is high, then give the agent less reward to encourage the agent to visit the less visited states. 
 
-    A mixed gaussian noise layer is proposed to provide a adaptive policy noise. A reward based on physics simulation time is proposed to encourage the agent to learn a generalizable policy in a task agnostic environment, and adapt to a new policy after given a task setting with sparse reward.
+    Based on HER algorithm, a trajector replacement strategy is proposed.
+    Trajectory replacement strategy replace every failed trajectory to get a trajectory which is more likely to success, and store the replaced trajectory and the original trajectory in the replay buffer for training.
+    Trajectory replacement strategy doesn't require the state vector to be consisted of achieved goals and desired goals, so it can be adapted to broader cases and more complex tasks.
+
+    A mixed gaussian noise layer is proposed to provide a adaptive policy noise. 
+    Mixed gaussian noise can be obtained by using a fully-connected layer to rescale a gaussian noise vector.
+    The mixed gaussian noise then is used to convert the deterministic action produced by the actor network to randomly exploring action, where the fully connected layer weights which decides the quality of exploration is learnt automatically with back-propagation.
+    Experiment results indicate that the agent with mixed gaussian noise converged to a higher environmental reward and higher success rate.
+
+    A reward based on physics simulation time is proposed. 
+    Because that solving open tasks often is related to complicated dynamics of the environment and simulating this will cost more time, the simulation time can be used as a reward to help the agent to improve its exploration strategy and generalizability.
+    The simulation time reward can be used to encourage the agent to learn a generalizable policy in a task agnostic environment, and adapt to a new policy after given a task setting with sparse reward.
+    Experiment results indicate that simulation time reward is correlated with the task-specific reward, and it can be used to improve the exploration strategy.
 \end{eabstract}
